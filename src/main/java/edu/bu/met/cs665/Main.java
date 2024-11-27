@@ -1,4 +1,5 @@
 /**
+ * DO TDD!!!!!!!!!!!
  * Name: FIRST_NAME LAST_NAME
  * Course: CS-665 Software Designs & Patterns
  * Date: MM/DD/YYYY
@@ -8,7 +9,10 @@
 
 package edu.bu.met.cs665;
 
-import edu.bu.met.cs665.example1.Person;
+import edu.bu.met.cs665.mbta.stations.Station;
+import edu.bu.met.cs665.mbta.stations.StationManager;
+import edu.bu.met.cs665.mbta.trains.ExpressTrain;
+import edu.bu.met.cs665.mbta.trains.RegularTrain;
 
 /**
  * This is the Main class.
@@ -16,23 +20,20 @@ import edu.bu.met.cs665.example1.Person;
 public class Main {
 
   /**
-   * A main method to run examples.
-   * You may use this method for development purposes as you start building your
-   * assignments/final project.  This could prove convenient to test as you are developing.
-   * However, please note that every assignment/final projects requires JUnit tests.
+   * Main entry point.
    */
   public static void main(String[] args) {
-    System.out.println("This is a test message from the Main class (Main.java file)");
-  }
+    System.out.println("---------------------------------------------");
+    System.out.println("MBTA Nofication System Started");
+    System.out.println("---------------------------------------------");
 
-  /**
-   * This method performs XYZ and returns String.
-   *
-   * @return String
-   */
-  private String doIt() {
-    Person student = new Person("John", "Doe");
-    return student.getLastName() + ',' + student.getFirstName();
+    System.out.println("Creating Stations and Station Manager...");
+    StationManager stationManager = new StationManager();
+
+    System.out.println("Creating Trains...");
+    RegularTrain regularTrain = new RegularTrain();
+    ExpressTrain expressTrain = new ExpressTrain();
+
   }
 
 }
