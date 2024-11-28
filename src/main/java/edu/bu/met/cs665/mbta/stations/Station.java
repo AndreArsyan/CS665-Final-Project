@@ -15,14 +15,16 @@ package edu.bu.met.cs665.mbta.stations;
 public class Station {
 
     private String stationName;
+    private Integer nextStationDistance = 0;
 
     /**
      * Create a Station object using first and last name and birthday.
      *
      * @param stationName name of the station as string
      */
-    public Station(String stationName) {
+    public Station(String stationName, Integer nextStationDistance) {
         this.stationName = stationName;
+        this.nextStationDistance = nextStationDistance;
     }
 
     /*
@@ -32,4 +34,10 @@ public class Station {
         return stationName;
     }
 
+    /*
+     * Getter method for next station distance.
+     */
+    public Integer getNextStationDistance() {
+        return nextStationDistance;
+    }
 }

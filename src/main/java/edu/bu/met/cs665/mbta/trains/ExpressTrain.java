@@ -4,27 +4,23 @@ import java.util.ArrayList;
 
 import edu.bu.met.cs665.mbta.stations.Station;
 import edu.bu.met.cs665.mbta.stations.StationManager;
+import edu.bu.met.cs665.utils.SubscriberBase;
 
 public class ExpressTrain extends Train implements TrainState {
-    public ExpressTrain() {
-        setStations();
+    public ExpressTrain(String name, ArrayList<SubscriberBase> expressSubscribers) {
+        super(name, expressSubscribers);
     }
 
     @Override
-    public void setStations() {
+    public void setupStations() {
         StationManager stationManager = StationManager.getInstance();
         this.stations = stationManager.getExpressStations();
+        this.setPreviousStation(this.stations.get(0));
+        this.distanceToNextStation = this.stations.get(0).getNextStationDistance();
     }
 
     @Override
     public ArrayList<Station> getStations() {
         return this.stations;
     }
-
-    @Override
-    public Station getLastStation() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getLastStation'");
-    }
-
 }

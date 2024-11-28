@@ -13,7 +13,7 @@ public class TestStation {
 
     @Test
     public void testGetStationName() {
-        Station station = new Station("South Station");
+        Station station = new Station("South Station", 1);
         assertEquals("South Station", station.getStationName());
     }
 

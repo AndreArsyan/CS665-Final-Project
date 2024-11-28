@@ -15,8 +15,11 @@ As an MBTA rider, I often miss trains or arrive too early at the station.
 
 ## Project Scope
 - Only Green Line **B** branch.
-- Express Train will skip some stations, whil Regular Train will visit each station.
-- Distance is measured in seconds. For example, distance from BU East to BU Central is 120 seconds.
+- Branch always starts from Boston College and ends with Government Center station.
+- Using a relative distance so that we can focus on the Notification feature, instead of train simulation.
+- Express Train will skip some stations, while Regular Train will visit each station.
+- Distance is measured in seconds. For example, distance from BU East to BU Central is 2 seconds.
+- Ignore train speed. Every train is moving per second.
 - Notification System is given delay to simulate real life situation and to prove Thread effectiveness.
 
 ## Technical Challenges
@@ -27,7 +30,7 @@ As an MBTA rider, I often miss trains or arrive too early at the station.
 
 ## Implementation Description
 1. **Flexibility:** 
-   - New notification types (e.g., Whatsapp Notifications) can be added easily.
+   - New notification types (e.g. Whatsapp Notifications) can be added easily.
    - New station can be added easily.
 2. **Design Patterns:**
    - **Observer Pattern:** Updates train locations in real time.
@@ -35,11 +38,10 @@ As an MBTA rider, I often miss trains or arrive too early at the station.
    - **Strategy Pattern:** Decides what and when to send notification.
    - **Singleton Pattern:** To provide list of available stations.
    - **Thread Pooling:** Manage notification mechanism.
-
-For each assignment, please answer the following:
-- Discuss the simplicity and understandability of your implementation, ensuring that it is
-easy for others to read and maintain.
-- Describe how you have avoided duplicated code and why it is important.
+   - **Iterator Pattern:** To simulate a moving train.
+3. **Modularity:**
+   - Each package only responsible for its domain (e.g. Station package will only contain classes for Station and its management only).
+   - Uses a design pattern to reduce high coupling.
 
 # Maven Commands
 ## Compile

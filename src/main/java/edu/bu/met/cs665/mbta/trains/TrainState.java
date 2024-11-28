@@ -16,10 +16,7 @@ import edu.bu.met.cs665.mbta.stations.Station;
  * This class is responsible for representing an interface Train State.
  */
 public interface TrainState {
-    void setStations();
+    void setupStations();
 
     ArrayList<Station> getStations();
-
-    Station getLastStation();
-
 }
