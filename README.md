@@ -8,10 +8,11 @@
 | Github | [Link](https://github.com/AndreArsyan/CS665-Final-Project)|
 
 # MBTA Notification System
-As an MBTA rider, I often miss trains or arrive too early at the station.
+As an MBTA rider, I often miss trains or arrived too early at the station.
 ### Proposed Solution:
 - I want notifications `x` minutes before the train arrives.
 - I want to choose between **App**, **Text**, or **Email** notifications.
+- I don't care whether it's an Express or Regular train as long as it is arrived at my station.
 
 ## Project Scope
 - Only Green Line **B** branch.
