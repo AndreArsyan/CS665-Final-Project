@@ -35,7 +35,7 @@ public class Main {
     StationManager stationManager = new StationManager();
 
     System.out.println("Registering Subscribers...");
-    ArrayList<SubscriberBase> trainSubscribers = new ArrayList<SubscriberBase>();
+    ArrayList<SubscriberBase> trainSubscribers = new ArrayList<>();
     trainSubscribers.add(new TrainSubscribers(2, stationManager.getStation(StationConstants.WASHINGTON_STREET)));
 
     System.out.println("Creating Trains...");
@@ -48,9 +48,9 @@ public class Main {
 
     System.out.println("Starting the trains...");
     int seconds = 0;
-    Boolean RegularTrainIsMoving = true;
-    Boolean ExpressTrainIsMoving = true;
-    while (RegularTrainIsMoving || ExpressTrainIsMoving) {
+    Boolean regularTrainIsMoving = true;
+    Boolean expressTrainIsMoving = true;
+    while (regularTrainIsMoving || expressTrainIsMoving) {
       try {
         System.out.println("======");
         Thread.sleep(1000); // Pause for 1 second
@@ -62,7 +62,7 @@ public class Main {
           expressTrainIterator.next();
         } else {
           // Meaning the train is at the last station
-          ExpressTrainIsMoving = false;
+          expressTrainIsMoving = false;
         }
 
         // Move the Regular Trains
@@ -72,11 +72,13 @@ public class Main {
             regularTrainIterator.next();
           } else {
             // Meaning the train is at the last station
-            RegularTrainIsMoving = false;
+            regularTrainIsMoving = false;
           }
         }
 
       } catch (InterruptedException e) {
+        // Clean up thread
+        Thread.currentThread().interrupt();
         break;
       }
     }

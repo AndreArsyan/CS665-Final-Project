@@ -11,10 +11,8 @@ public class TrainIterator implements Iterator {
 
     @Override
     public boolean hasNext() {
-        if (train.getPreviousStation() == train.getStations().getLast()) {
-            return false;
-        }
-        return true;
+        // Check if the train is at the last station
+        return !train.getPreviousStation().equals(train.getStations().getLast());
     }
 
     @Override

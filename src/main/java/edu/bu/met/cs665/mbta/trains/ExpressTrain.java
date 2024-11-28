@@ -6,7 +6,7 @@ import edu.bu.met.cs665.mbta.stations.Station;
 import edu.bu.met.cs665.mbta.stations.StationManager;
 import edu.bu.met.cs665.utils.SubscriberBase;
 
-public class ExpressTrain extends Train implements TrainState {
+public class ExpressTrain extends Train {
     public ExpressTrain(String name, ArrayList<SubscriberBase> expressSubscribers) {
         super(name, expressSubscribers);
     }

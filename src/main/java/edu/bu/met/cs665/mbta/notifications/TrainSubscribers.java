@@ -18,8 +18,8 @@ public class TrainSubscribers implements SubscriberBase {
     public void execute(Object obj) {
         if (obj instanceof Train) {
             Train train = (Train) obj;
-            if (train.getDistanceToNextStation() == distanceToNotify
-                    && train.getNextStation().getStationName() == station.getStationName()) {
+            if (train.getDistanceToNextStation().equals(distanceToNotify)
+                    && train.getNextStation().getStationName().equals(station.getStationName())) {
                 System.out.println(train.getName() + " is approaching to " + station.getStationName());
             }
         }
