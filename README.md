@@ -33,15 +33,20 @@ As an MBTA rider, I often miss trains or arrive too early at the station.
    - New notification types (e.g. Whatsapp Notifications) can be added easily.
    - New station can be added easily.
 2. **Design Patterns:**
-   - **Observer Pattern:** Updates train locations in real time.
-   - **State Pattern:** Differentiate between Regular and Express trains.
-   - **Strategy Pattern:** Decides what and when to send notification.
-   - **Singleton Pattern:** To provide list of available stations.
-   - **Thread Pooling:** Manage notification mechanism.
-   - **Iterator Pattern:** To simulate a moving train.
+   
+   Using several design pattern to model the real life.
+   | Design Pattern       | Implement for                                         |
+   |----------------------|-------------------------------------------------------|
+   | **Observer Pattern** | Updates train locations in real time.                 |
+   | **State Pattern**    | Differentiates between Regular and Express trains.    |
+   | **Strategy Pattern** | Decides what and when to send notifications.          |
+   | **Singleton Pattern**| Provides a list of available stations.                |
+   | **Thread Pooling**   | Manages the notification mechanism.                   |
+   | **Iterator Pattern** | Simulates a moving train.                             |
+
 3. **Modularity:**
-   - Each package only responsible for its domain (e.g. Station package will only contain classes for Station and its management only).
-   - Uses a design pattern to reduce high coupling.
+   - Each package only responsible for its domain (i.e. Station package will only contain classes for Station and its management only).
+   - Minimized high coupling.
 
 # Maven Commands
 ## Compile
