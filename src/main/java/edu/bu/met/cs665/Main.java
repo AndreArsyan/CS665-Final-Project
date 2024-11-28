@@ -10,11 +10,14 @@ package edu.bu.met.cs665;
 
 import java.util.ArrayList;
 
-import edu.bu.met.cs665.mbta.notifications.TrainSubscribers;
+import edu.bu.met.cs665.mbta.notifications.AppNotification;
+import edu.bu.met.cs665.mbta.notifications.EmailNotification;
+import edu.bu.met.cs665.mbta.notifications.TextNotification;
 import edu.bu.met.cs665.mbta.stations.StationConstants;
 import edu.bu.met.cs665.mbta.stations.StationManager;
 import edu.bu.met.cs665.mbta.trains.ExpressTrain;
 import edu.bu.met.cs665.mbta.trains.TrainIterator;
+import edu.bu.met.cs665.mbta.trains.TrainSubscribers;
 import edu.bu.met.cs665.mbta.trains.RegularTrain;
 import edu.bu.met.cs665.utils.SubscriberBase;
 
@@ -34,9 +37,22 @@ public class Main {
     System.out.println("Creating Stations and Station Manager...");
     StationManager stationManager = new StationManager();
 
+    System.out.println("Creating Notification System...");
+    AppNotification appNotification = new AppNotification();
+    EmailNotification emailNotification = new EmailNotification();
+    TextNotification textNotification = new TextNotification();
+
     System.out.println("Registering Subscribers...");
     ArrayList<SubscriberBase> trainSubscribers = new ArrayList<>();
-    trainSubscribers.add(new TrainSubscribers(2, stationManager.getStation(StationConstants.WASHINGTON_STREET)));
+    trainSubscribers
+        .add(new TrainSubscribers("Andre", 2, stationManager.getStation(StationConstants.WASHINGTON_STREET),
+            appNotification));
+    trainSubscribers
+        .add(new TrainSubscribers("Jasmine", 1, stationManager.getStation(StationConstants.BOSTON_UNIVERSITY_EAST),
+            emailNotification));
+    trainSubscribers
+        .add(new TrainSubscribers("Jasmine", 2, stationManager.getStation(StationConstants.AMORY_STREET),
+            textNotification));
 
     System.out.println("Creating Trains...");
     RegularTrain regularTrain = new RegularTrain("Regular Train #1", trainSubscribers);

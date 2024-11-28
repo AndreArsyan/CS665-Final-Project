@@ -1,17 +1,22 @@
-package edu.bu.met.cs665.mbta.notifications;
+package edu.bu.met.cs665.mbta.trains;
 
 import edu.bu.met.cs665.utils.SubscriberBase;
+import edu.bu.met.cs665.mbta.notifications.Notification;
 import edu.bu.met.cs665.mbta.stations.Station;
-import edu.bu.met.cs665.mbta.trains.Train;
 
 public class TrainSubscribers implements SubscriberBase {
 
     Integer distanceToNotify;
     Station station;
+    Notification notification;
+    String subscriberName;
 
-    public TrainSubscribers(Integer distanceToNotify, Station station) {
+    public TrainSubscribers(String subscriberName, Integer distanceToNotify, Station station,
+            Notification notification) {
+        this.subscriberName = subscriberName;
         this.distanceToNotify = distanceToNotify;
         this.station = station;
+        this.notification = notification;
     }
 
     @Override
@@ -20,7 +25,8 @@ public class TrainSubscribers implements SubscriberBase {
             Train train = (Train) obj;
             if (train.getDistanceToNextStation().equals(distanceToNotify)
                     && train.getNextStation().getStationName().equals(station.getStationName())) {
-                System.out.println(train.getName() + " is approaching to " + station.getStationName());
+                this.notification.send("Hi " + this.subscriberName + ", " + train.getName() + " will arrive at "
+                        + station.getStationName() + " in " + distanceToNotify + " seconds.");
             }
         }
     }

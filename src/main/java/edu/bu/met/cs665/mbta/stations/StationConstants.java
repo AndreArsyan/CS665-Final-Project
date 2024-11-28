@@ -1,7 +1,12 @@
 package edu.bu.met.cs665.mbta.stations;
 
 public class StationConstants {
-    // Public static constants for station names
+
+    // To disable instantiation
+    private StationConstants() {
+    }
+
+    // Constants for station names
     public static final String BOSTON_COLLEGE = "Boston College";
     public static final String SOUTH_STREET = "South Street";
     public static final String CHESTNUT_HILL_AVENUE = "Chestnut Hill Avenue";
