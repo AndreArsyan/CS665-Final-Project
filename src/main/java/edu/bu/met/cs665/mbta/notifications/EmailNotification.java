@@ -5,7 +5,7 @@ public class EmailNotification extends NotificationManager implements Notificati
     @Override
     public void send(String message) {
         if (!isSent) {
-            System.out.println("[EMAIL NOTIFICATION]: " + message);
+            System.out.print("[EMAIL NOTIFICATION]: " + message);
             isSent = true;
         }
     }

@@ -68,10 +68,9 @@ public class Main {
     Boolean expressTrainIsMoving = true;
     while (regularTrainIsMoving || expressTrainIsMoving) {
       try {
-        System.out.println("======");
         Thread.sleep(1000); // Pause for 1 second
         seconds++;
-        System.out.println("Distance passed: " + seconds);
+        System.out.print("\n Distance passed: " + seconds + " ");
 
         // Move the Express Trains
         if (expressTrainIterator.hasNext()) {
@@ -92,12 +91,16 @@ public class Main {
           }
         }
 
+        if (!regularTrainIsMoving && !expressTrainIsMoving) {
+          System.out.println("All trains have arrived");
+          break;
+        }
+
       } catch (InterruptedException e) {
         // Clean up thread
         Thread.currentThread().interrupt();
         break;
       }
     }
-    System.out.println("All trains have arrived");
   }
 }

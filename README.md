@@ -40,7 +40,7 @@ As an MBTA rider, I often miss trains or arrived too early at the station.
    |----------------------|-------------------------------------------------------|
    | **Observer Pattern** | Updates train locations in real time.                 |
    | **State Pattern**    | Differentiates between Regular and Express trains.    |
-   | **Strategy Pattern** | Decides what and when to send notifications.          |
+   | **Strategy Pattern** | Decides which notification channel to send            |
    | **Singleton Pattern**| Provides a list of available stations.                |
    | **Thread Pooling**   | Manages the notification mechanism.                   |
    | **Iterator Pattern** | Simulates a moving train.                             |

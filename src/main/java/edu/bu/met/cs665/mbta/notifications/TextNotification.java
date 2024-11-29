@@ -5,7 +5,7 @@ public class TextNotification extends NotificationManager implements Notificatio
     @Override
     public void send(String message) {
         if (!isSent) {
-            System.out.println("[TEXT NOTIFICATION]: " + message);
+            System.out.print("[TEXT NOTIFICATION]: " + message);
             isSent = true;
         }
     }

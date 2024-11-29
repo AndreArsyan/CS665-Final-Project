@@ -74,7 +74,8 @@ public abstract class Train implements PublisherBase, TrainState {
         if (this.distanceToNextStation == 0) {
             this.previousStation = this.getNextStation();
             this.distanceToNextStation = this.previousStation.getNextStationDistance();
-            System.out.println(this.getName() + " Train has arrived at " + this.previousStation.getStationName());
+            System.out
+                    .print(this.getName() + " Train has arrived at " + this.previousStation.getStationName() + " ");
         }
         notifySubscribers();
     }

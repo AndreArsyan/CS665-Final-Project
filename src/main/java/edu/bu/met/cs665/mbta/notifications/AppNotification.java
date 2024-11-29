@@ -5,7 +5,7 @@ public class AppNotification extends NotificationManager implements Notification
     @Override
     public void send(String message) {
         if (!isSent) {
-            System.out.println("[APP NOTIFICATION]: " + message);
+            System.out.print("[APP NOTIFICATION]: " + message);
             isSent = true;
         }
     }
