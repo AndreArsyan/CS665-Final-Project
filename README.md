@@ -28,6 +28,7 @@ As an MBTA rider, I often miss trains or arrived too early at the station.
 - Modelling moving trains.
 - Modelling Regular and Express trains.
 - Sending out notifications takes time, and main app shouldn't wait for it to be finished.
+- Minimize coupling.
 
 ## Implementation Description
 1. **Flexibility:** 
@@ -42,12 +43,12 @@ As an MBTA rider, I often miss trains or arrived too early at the station.
    | **State Pattern**    | Differentiates between Regular and Express trains.    |
    | **Strategy Pattern** | Decides which notification channel to send            |
    | **Singleton Pattern**| Provides a list of available stations.                |
-   | **Thread Pooling**   | Manages the notification mechanism.                   |
+   | **Thread Pooling**   | Manages the resource allocation.                       |
    | **Iterator Pattern** | Simulates a moving train.                             |
 
 3. **Modularity:**
-   - Each package only responsible for its domain (i.e. Station package will only contain classes for Station and its management only).
-   - Minimized high coupling.
+
+   Each package only responsible for its domain (i.e. Station package will only contain classes for Station and its management only).
 
 # Maven Commands
 ## Compile

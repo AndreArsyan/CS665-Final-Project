@@ -1,5 +1,17 @@
 package edu.bu.met.cs665.mbta.notifications;
 
-public abstract class NotificationManager {
+import edu.bu.met.cs665.utils.ThreadManager;
+
+public abstract class NotificationManager implements Notification {
     Boolean isSent = false;
+    ThreadManager threadManager;
+
+    protected NotificationManager(ThreadManager threadManager) {
+        this.threadManager = threadManager;
+    }
+
+    public void sendMessage(String message) {
+        threadManager.addTask(() -> send(message));
+    }
+
 }

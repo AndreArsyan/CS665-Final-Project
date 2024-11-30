@@ -1,11 +1,20 @@
 package edu.bu.met.cs665.mbta.notifications;
 
-public class AppNotification extends NotificationManager implements Notification {
+import edu.bu.met.cs665.utils.ThreadManager;
+
+public class AppNotification extends NotificationManager {
+
+    public AppNotification(ThreadManager threadManager) {
+        super(threadManager);
+    }
 
     @Override
     public void send(String message) {
         if (!isSent) {
-            System.out.print("[APP NOTIFICATION]: " + message);
+            System.out.print("\n" +
+                    "----------------------------------------\n" +
+                    "[APP NOTIFICATION]: " + message +
+                    "\n----------------------------------------");
             isSent = true;
         }
     }
