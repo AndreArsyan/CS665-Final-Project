@@ -22,7 +22,7 @@ public class TrainSubscribers implements SubscriberBase {
     }
 
     @Override
-    public void execute(Object obj) {
+    public void notify(Object obj) {
         if (obj instanceof Train) {
             Train train = (Train) obj;
             if (train.getDistanceToNextStation().equals(distanceToNotify)

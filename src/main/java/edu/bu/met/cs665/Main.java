@@ -21,8 +21,9 @@ public class Main {
    */
   public static void main(String[] args) {
     ThreadManager threadManager = new ThreadManager();
-
     GreenLine greenLine = new GreenLine(threadManager);
-    threadManager.addTask(() -> greenLine.start());
+
+    // Start the simulation in a separate thread.
+    threadManager.addTask(greenLine::start);
   }
 }

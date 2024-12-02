@@ -93,7 +93,7 @@ public abstract class Train implements PublisherBase, TrainState {
     @Override
     public void notifySubscribers() {
         for (SubscriberBase o : subscribers) {
-            o.execute(this);
+            o.notify(this);
         }
     }
 
