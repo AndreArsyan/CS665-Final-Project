@@ -43,17 +43,12 @@ public class GreenLine {
 
         System.out.println("Registering Subscribers...");
         trainSubscribers = new ArrayList<>();
-        trainSubscribers
-                .add(new TrainSubscribers("Andre", 2, stationManager.getStation(StationConstants.WASHINGTON_STREET),
-                        appNotification));
-        trainSubscribers
-                .add(new TrainSubscribers("Jasmine", 1,
-                        stationManager.getStation(StationConstants.BOSTON_UNIVERSITY_EAST),
-                        emailNotification));
-        trainSubscribers
-                .add(new TrainSubscribers("Jasmine", 2,
-                        stationManager.getStation(StationConstants.AMORY_STREET),
-                        textNotification));
+        for (int i = 1; i <= 100; i++) {
+            trainSubscribers
+                    .add(new TrainSubscribers("Rider " + i, 2,
+                            stationManager.getStation(StationConstants.WASHINGTON_STREET),
+                            appNotification));
+        }
 
         System.out.println("Creating Trains...");
         regularTrain = new RegularTrain("Regular Train #1", trainSubscribers);

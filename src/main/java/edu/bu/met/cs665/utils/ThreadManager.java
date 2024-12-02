@@ -11,7 +11,7 @@ import java.util.concurrent.Future;
 public class ThreadManager {
 
     private static ExecutorService instance = null;
-    private static final int DEFAULT_NUMBER_OF_THREADS = 3;
+    private static final int DEFAULT_NUMBER_OF_THREADS = 8;
     List<Future<?>> futures = new ArrayList<Future<?>>();
 
     public ThreadManager() {
@@ -39,7 +39,7 @@ public class ThreadManager {
     }
 
     public Map<String, Integer> getCompletedTaskCount() {
-        Integer total = -1; // -1 Because the first task is the Simulation
+        Integer total = -1; // Can change to -1 Because the first task is the Simulation
         Integer completed = 0;
         for (Future<?> future : futures) {
             total++;

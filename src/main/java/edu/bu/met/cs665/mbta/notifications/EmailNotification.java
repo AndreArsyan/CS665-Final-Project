@@ -10,12 +10,14 @@ public class EmailNotification extends NotificationManager implements Notificati
 
     @Override
     public void send(String message) {
-        if (!isSent) {
+        try {
+            Thread.sleep(10);
             System.out.print("\n" +
                     "----------------------------------------\n" +
                     "[EMAIL NOTIFICATION]: " + message +
                     "\n----------------------------------------");
-            isSent = true;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 

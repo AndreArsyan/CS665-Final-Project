@@ -3,7 +3,6 @@ package edu.bu.met.cs665.mbta.notifications;
 import edu.bu.met.cs665.utils.ThreadManager;
 
 public abstract class NotificationManager implements Notification {
-    Boolean isSent = false;
     ThreadManager threadManager;
 
     protected NotificationManager(ThreadManager threadManager) {

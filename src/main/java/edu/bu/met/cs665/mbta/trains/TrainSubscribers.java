@@ -11,6 +11,7 @@ public class TrainSubscribers implements SubscriberBase {
     Station station;
     NotificationManager notification;
     String subscriberName;
+    boolean isNotified = false;
 
     public TrainSubscribers(String subscriberName, Integer distanceToNotify, Station station,
             NotificationManager notification) {
@@ -26,8 +27,12 @@ public class TrainSubscribers implements SubscriberBase {
             Train train = (Train) obj;
             if (train.getDistanceToNextStation().equals(distanceToNotify)
                     && train.getNextStation().getStationName().equals(station.getStationName())) {
-                this.notification.sendMessage("Hi " + this.subscriberName + ", " + train.getName() + " will arrive at "
-                        + station.getStationName() + " in " + distanceToNotify + " seconds.");
+                if (!isNotified) {
+                    this.notification
+                            .sendMessage("Hi " + this.subscriberName + ", " + train.getName() + " will arrive at "
+                                    + station.getStationName() + " in " + distanceToNotify + " seconds.");
+                    isNotified = true;
+                }
             }
         }
     }

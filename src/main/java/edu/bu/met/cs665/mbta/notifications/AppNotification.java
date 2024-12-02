@@ -10,12 +10,15 @@ public class AppNotification extends NotificationManager {
 
     @Override
     public void send(String message) {
-        if (!isSent) {
+        try {
+            Thread.sleep(10);
             System.out.print("\n" +
                     "----------------------------------------\n" +
                     "[APP NOTIFICATION]: " + message +
                     "\n----------------------------------------");
-            isSent = true;
+        } catch (InterruptedException e) {
+            System.out.println("Error sending notification: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

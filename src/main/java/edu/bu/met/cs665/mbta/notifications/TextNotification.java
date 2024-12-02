@@ -10,12 +10,14 @@ public class TextNotification extends NotificationManager implements Notificatio
 
     @Override
     public void send(String message) {
-        if (!isSent) {
+        try {
+            Thread.sleep(10);
             System.out.print("\n" +
                     "----------------------------------------\n" +
                     "[TEXT NOTIFICATION]: " + message +
                     "\n----------------------------------------");
-            isSent = true;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
