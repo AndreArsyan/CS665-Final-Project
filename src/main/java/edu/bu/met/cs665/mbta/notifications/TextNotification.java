@@ -9,12 +9,27 @@ package edu.bu.met.cs665.mbta.notifications;
 
 import edu.bu.met.cs665.utils.ThreadManager;
 
+/**
+ * This is the TextNotification class.
+ * This class is responsible for representing an Text Notification.
+ */
 public class TextNotification extends NotificationManager {
 
+    /**
+     * Create an TextNotification object.
+     *
+     * @param threadManager Thread manager object to enable sending notifications
+     *                      using Threads.
+     */
     public TextNotification(ThreadManager threadManager) {
         super(threadManager);
     }
 
+    /**
+     * Send a notification message.
+     *
+     * @param message notification message.
+     */
     @Override
     public void send(String message) {
         try {

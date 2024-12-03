@@ -9,9 +9,19 @@ package edu.bu.met.cs665.mbta.notifications;
 
 import edu.bu.met.cs665.utils.ThreadManager;
 
+/**
+ * This is the NotificationManager class.
+ * This class is responsible for representing a Notification Manager.
+ */
 public abstract class NotificationManager implements Notification {
     ThreadManager threadManager;
 
+    /**
+     * Create a NotificationManager object.
+     *
+     * @param threadManager Thread manager object to enable sending notifications
+     *                      using Threads.
+     */
     protected NotificationManager(ThreadManager threadManager) {
         this.threadManager = threadManager;
     }

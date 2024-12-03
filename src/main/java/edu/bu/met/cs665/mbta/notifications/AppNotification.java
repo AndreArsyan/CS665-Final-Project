@@ -9,12 +9,27 @@ package edu.bu.met.cs665.mbta.notifications;
 
 import edu.bu.met.cs665.utils.ThreadManager;
 
+/**
+ * This is the AppNotification class.
+ * This class is responsible for representing an App Notification.
+ */
 public class AppNotification extends NotificationManager {
 
+    /**
+     * Create an AppNotification object.
+     *
+     * @param threadManager Thread manager object to enable sending notifications
+     *                      using Threads.
+     */
     public AppNotification(ThreadManager threadManager) {
         super(threadManager);
     }
 
+    /**
+     * Send a notification message.
+     *
+     * @param message notification message.
+     */
     @Override
     public void send(String message) {
         try {
@@ -28,5 +43,4 @@ public class AppNotification extends NotificationManager {
             e.printStackTrace();
         }
     }
-
 }
