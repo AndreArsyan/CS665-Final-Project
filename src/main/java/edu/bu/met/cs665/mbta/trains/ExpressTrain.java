@@ -13,11 +13,25 @@ import edu.bu.met.cs665.mbta.stations.Station;
 import edu.bu.met.cs665.mbta.stations.StationManager;
 import edu.bu.met.cs665.utils.SubscriberBase;
 
+/**
+ * This is the ExpressTrain class.
+ * This class is responsible for representing an Express Train.
+ */
 public class ExpressTrain extends Train {
-    public ExpressTrain(String name, ArrayList<SubscriberBase> expressSubscribers) {
-        super(name, expressSubscribers);
+
+    /**
+     * Create an Express Train object using Train name and list of subscribers.
+     *
+     * @param name        name of the station as string
+     * @param subscribers list of train subscribers as ArrayList
+     */
+    public ExpressTrain(String name, ArrayList<SubscriberBase> subscribers) {
+        super(name, subscribers);
     }
 
+    /**
+     * Setup the stations passed by the Express Train.
+     */
     @Override
     public void setupStations() {
         StationManager stationManager = StationManager.getInstance();
@@ -26,6 +40,11 @@ public class ExpressTrain extends Train {
         this.distanceToNextStation = this.stations.get(0).getNextStationDistance();
     }
 
+    /**
+     * Get the stations passed by the Express Train.
+     *
+     * @return list of stations as ArrayList
+     */
     @Override
     public ArrayList<Station> getStations() {
         return this.stations;
