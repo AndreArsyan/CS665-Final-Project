@@ -7,6 +7,10 @@
  */
 package edu.bu.met.cs665.mbta.stations;
 
+/**
+ * This is the StationConstants class.
+ * This class is a collection of station name constants.
+ */
 public class StationConstants {
 
     // To disable this class instantiation

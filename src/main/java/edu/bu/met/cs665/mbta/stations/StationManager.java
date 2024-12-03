@@ -8,17 +8,29 @@
 package edu.bu.met.cs665.mbta.stations;
 
 import java.util.ArrayList;
+
 import static edu.bu.met.cs665.mbta.stations.StationConstants.*;
 
+/**
+ * This is the StationManager class.
+ * This class is responsible for representing a Station Manager.
+ */
 public class StationManager {
     private static StationManager instance;
     private ArrayList<Station> stations;
     private ArrayList<Station> expressStations;
 
+    /**
+     * Create a StationManager object.
+     */
     public StationManager() {
         setStations();
     }
 
+    /**
+     * Create Stations object.
+     * This method is responsible for creating all the stations.
+     */
     private void setStations() {
         this.stations = new ArrayList<>();
         this.expressStations = new ArrayList<>();
@@ -72,6 +84,11 @@ public class StationManager {
         expressStations.add(governmentCenter);
     }
 
+    /**
+     * Method to get the instance of the StationManager.
+     * 
+     * @return instance of the StationManager
+     */
     public static StationManager getInstance() {
         if (instance == null) {
             instance = new StationManager();
@@ -79,14 +96,30 @@ public class StationManager {
         return instance;
     }
 
+    /**
+     * Method to get all stations.
+     * 
+     * @return list of all stations
+     */
     public ArrayList<Station> getAllStations() {
         return stations;
     }
 
+    /**
+     * Method to get all stations for the express train.
+     * 
+     * @return list of all express stations
+     */
     public ArrayList<Station> getExpressStations() {
         return expressStations;
     }
 
+    /**
+     * Method to get a station by name.
+     * 
+     * @param stationName name of the station
+     * @return station object
+     */
     public Station getStation(String stationName) {
         for (Station station : stations) {
             if (station.getStationName().equals(stationName)) {

@@ -21,6 +21,10 @@ import edu.bu.met.cs665.mbta.trains.TrainSubscribers;
 import edu.bu.met.cs665.utils.SubscriberBase;
 import edu.bu.met.cs665.utils.ThreadManager;
 
+/**
+ * This is the GreenLine class.
+ * This class is responsible for representing a GreenLine simulation.
+ */
 public class GreenLine {
     StationManager stationManager;
     AppNotification appNotification;
@@ -33,6 +37,12 @@ public class GreenLine {
     TrainIterator regularTrainIterator;
     ThreadManager threadManager;
 
+    /**
+     * Create an GreenLine object.
+     *
+     * @param threadManager Thread manager object to enable sending notifications
+     *                      using Threads.
+     */
     public GreenLine(ThreadManager threadManager) {
         System.out.println("---------------------------------------------");
         System.out.println("MBTA Simulation System Started");
@@ -81,6 +91,9 @@ public class GreenLine {
 
     }
 
+    /*
+     * Method to start the simulation.
+     */
     public void start() {
         System.out.println("Starting the trains...");
         int seconds = 0;
@@ -102,8 +115,7 @@ public class GreenLine {
                     expressTrainIsMoving = false;
                 }
 
-                // Move the Regular Trains
-                // Give the Express Train a head start 1 second to simulate train not crashing.
+                // Move the Regular Trains after giving the Express Train a 1 second head start.
                 if (seconds > 1) {
                     if (regularTrainIterator.hasNext()) {
                         regularTrainIterator.next();
@@ -113,13 +125,14 @@ public class GreenLine {
                     }
                 }
 
+                // Check if all trains have arrived
                 if (!regularTrainIsMoving && !expressTrainIsMoving) {
                     System.out.println("All trains have arrived");
                     break;
                 }
 
             } catch (InterruptedException e) {
-                // Clean up thread
+                // Clean up thread for the 1s delay
                 Thread.currentThread().interrupt();
                 break;
             }

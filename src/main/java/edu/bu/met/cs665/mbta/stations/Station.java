@@ -18,9 +18,10 @@ public class Station {
     private Integer nextStationDistance = 0;
 
     /**
-     * Create a Station object using first and last name and birthday.
+     * Create a Station object using station name and next station distance.
      *
-     * @param stationName name of the station as string
+     * @param stationName         name of the station as string
+     * @param nextStationDistance distance to the next station as integer
      */
     public Station(String stationName, Integer nextStationDistance) {
         this.stationName = stationName;
