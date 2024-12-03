@@ -43,11 +43,25 @@ public class GreenLine {
 
         System.out.println("Registering Subscribers...");
         trainSubscribers = new ArrayList<>();
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 5; i++) {
             trainSubscribers
                     .add(new TrainSubscribers("Rider " + i, 2,
                             stationManager.getStation(StationConstants.WASHINGTON_STREET),
                             appNotification));
+        }
+
+        for (int i = 1; i <= 10; i++) {
+            trainSubscribers
+                    .add(new TrainSubscribers("Student " + i, 2,
+                            stationManager.getStation(StationConstants.BOSTON_UNIVERSITY_CENTRAL),
+                            textNotification));
+        }
+
+        for (int i = 1; i <= 10; i++) {
+            trainSubscribers
+                    .add(new TrainSubscribers("Worker " + i, 2,
+                            stationManager.getStation(StationConstants.COPLEY),
+                            textNotification));
         }
 
         System.out.println("Creating Trains...");
@@ -67,7 +81,7 @@ public class GreenLine {
         Boolean expressTrainIsMoving = true;
         while (regularTrainIsMoving || expressTrainIsMoving) {
             try {
-                Thread.sleep(1000); // Pause for 1 second
+                Thread.sleep(1000); // Train is moving per second.
                 seconds++;
                 System.out.print("\n Distance passed: " + seconds + " | Notification sent: "
                         + threadManager.getCompletedTaskCount().get("completed") + "/"
