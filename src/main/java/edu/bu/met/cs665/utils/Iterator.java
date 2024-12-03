@@ -7,6 +7,10 @@
  */
 package edu.bu.met.cs665.utils;
 
+/**
+ * This is the Iterator interface.
+ * This interface is responsible as blueprint of an Iterator.
+ */
 public interface Iterator {
     boolean hasNext();
 

@@ -7,6 +7,10 @@
  */
 package edu.bu.met.cs665.utils;
 
+/**
+ * This is the PublisherBase interface.
+ * This interface is responsible as blueprint of a Publisher.
+ */
 public interface PublisherBase {
 
     void subscribe(SubscriberBase o);

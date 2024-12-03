@@ -7,6 +7,10 @@
  */
 package edu.bu.met.cs665.utils;
 
+/**
+ * This is the SubscriberBase interface.
+ * This interface is responsible as blueprint of a Subscriber.
+ */
 public interface SubscriberBase {
 
     void notify(Object obj);
