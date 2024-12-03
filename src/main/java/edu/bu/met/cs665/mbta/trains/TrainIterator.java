@@ -1,3 +1,10 @@
+/**
+ * Name: Andre Arsyan Jordie
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 11/28/2024
+ * File Name: TrainIterator.java
+ * Description: This class is responsible for the Train Iterator.
+ */
 package edu.bu.met.cs665.mbta.trains;
 
 import edu.bu.met.cs665.utils.Iterator;

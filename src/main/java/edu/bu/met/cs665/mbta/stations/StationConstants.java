@@ -1,8 +1,15 @@
+/**
+ * Name: Andre Arsyan Jordie
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 11/28/2024
+ * File Name: StationConstants.java
+ * Description: This class is responsible for station constants.
+ */
 package edu.bu.met.cs665.mbta.stations;
 
 public class StationConstants {
 
-    // To disable instantiation
+    // To disable this class instantiation
     private StationConstants() {
     }
 

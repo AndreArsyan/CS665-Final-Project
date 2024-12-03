@@ -25,7 +25,8 @@ As an MBTA rider, I often miss trains or arrived too early at the station.
 
 ## Technical Challenges
 - Modelling MBTA Green Line B.
-- Modelling moving trains.
+- Modelling moving Trains.
+- Modelling Stations
 - Modelling Regular and Express trains.
 - Sending out notifications takes time, and main app shouldn't wait for it to be finished.
 - Minimize coupling.

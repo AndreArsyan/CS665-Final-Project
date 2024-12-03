@@ -1,3 +1,10 @@
+/**
+ * Name: Andre Arsyan Jordie
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 11/28/2024
+ * File Name: ThreadManager.java
+ * Description: This class is responsible for the Thread Manager.
+ */
 package edu.bu.met.cs665.utils;
 
 import java.util.ArrayList;

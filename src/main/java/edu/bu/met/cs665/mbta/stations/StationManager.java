@@ -1,3 +1,10 @@
+/**
+ * Name: Andre Arsyan Jordie
+ * Course: CS-665 Software Designs & Patterns
+ * Date: 11/28/2024
+ * File Name: StationManager.java
+ * Description: This class is responsible for the Station Manager.
+ */
 package edu.bu.met.cs665.mbta.stations;
 
 import java.util.ArrayList;
